@@ -10,10 +10,4 @@
 <% end %>
 <div id="message"></div>
 
-<p>Task Completed? <span id="<%= @job.title %>"><%= @job.completed %></span></p>
-<p>Task Pending? <span id="<%= @job.id %>"><%= @job.pending %></span></p>
-<br>
-<%= form_for @job, remote: true do |f| %>
-<%= f.check_box :completed %>
-<%= f.submit "Im finished with this project!"%>
-<% end %>
+<p>Task Active? <span id="<%= @job.id %>"><%= @job.pending %></p><%= link_to "Mark as active job", edit_job_path(@job), remote: true %></span>
