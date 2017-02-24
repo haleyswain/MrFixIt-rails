@@ -1,3 +1,13 @@
-$("#claim_job_link").hide();
-$("#message").text("Congrats! You just claimed this job!")
-$("#claimed").append("<p>test<%= @job.title %></p>")
+
+  $("#claim_job_link").hide();
+  $("#message").text("Congrats! You just claimed this job!");
+  $("#claimed").append("<p>test<%= @job.title %></p>");
+
+<% if @job.pending %>
+  $("#<%= @job.title %>").html("true");
+  $("#active-jobs").append("<%= @job.title %>");
+  console.log("<%= @job.title %> is pending");
+  <% else %>
+  $("#<%= @job.title %>").html("false");
+  console.log("<%= @job.title %> is completed!");
+<% end %>

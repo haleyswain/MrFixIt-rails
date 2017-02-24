@@ -7,3 +7,16 @@
 </ul>
 
 <div id="claimed"></div>
+
+<div id="active-jobs">
+  <p>Pending Jobs:</p>
+    <ul>
+      <% current_worker.jobs.each do |job| %>
+      <% if @job.completed = true %>
+        <li><%= link_to job.title, job_path(job) %></li>
+      <% else %>
+        <p> You have no pending jobs! </p>
+      </ul>
+    <% end %>
+  <% end %>
+</div>

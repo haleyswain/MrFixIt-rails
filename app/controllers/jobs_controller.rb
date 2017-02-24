@@ -25,7 +25,7 @@ class JobsController < ApplicationController
   def update
     @job = Job.find(params[:id])
     if current_worker
-      if @job.update(pending: true, worker_id: current_worker.id)
+      if @job.update(pending: true, completed: false, worker_id: current_worker.id)
         respond_to do |format|
         format.html { redirect_to choice_path(@choice) }
         format.js
@@ -40,6 +40,7 @@ class JobsController < ApplicationController
       redirect_to job_path(@job)
     end
   end
+
 
 private
 

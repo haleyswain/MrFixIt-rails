@@ -9,3 +9,11 @@
 <%= link_to "click here to claim it now", job_path(@job), id: "claim_job_link", :method => "patch", remote: true %>
 <% end %>
 <div id="message"></div>
+
+<p>Task Completed? <span id="<%= @job.title %>"><%= @job.completed %></span></p>
+<p>Task Pending? <span id="<%= @job.id %>"><%= @job.pending %></span></p>
+<br>
+<%= form_for @job, remote: true do |f| %>
+<%= f.check_box :completed %>
+<%= f.submit "Im finished with this project!"%>
+<% end %>

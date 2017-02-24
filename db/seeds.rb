@@ -8,3 +8,4 @@
 
   user = User.create! :email => 'user@epicodus.com', :password => 'testtest', :password_confirmation => 'testtest'
   worker = Worker.create! :email => 'worker@epicodus.com', :password => 'testtest', :password_confirmation => 'testtest'
+  job = Job.create! :title => "walk the dog", :description => "walk the dog"
