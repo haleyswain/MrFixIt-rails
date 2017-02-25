@@ -6,14 +6,33 @@
 <% end %>
 </ul>
 
-<div id="claimed"><p>test</p></div>
+<div id="claimed"></div>
 
 <div id="active-jobs">
-  <ul>
+  <p>Jobs you are actively working on:</p>
     <% current_worker.jobs.each do |job| %>
+    <ul>
+    <% if job.completed == false %>
     <% if job.pending == true %>
     <li><%= job.title %></li>
   </ul>
   <% end %>
   <% end %>
+  <% end %>
+
+</div>
+
+<div id="pending-jobs">
+  <p>Jobs you have claimed, but are not yet finished</p>
+  <% current_worker.jobs.each do |job| %>
+  <% if job.pending == true %>
+  <ul>
+    <li><%= job.title %></li>
+  </ul>
+  <% end %>
+  <% end %>
+</div>
+
+<div id="completed">
+  <p>Your Completed tasks!</p>
 </div>
