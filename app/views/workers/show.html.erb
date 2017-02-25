@@ -6,9 +6,14 @@
 <% end %>
 </ul>
 
-<div id="claimed"></div>
+<div id="claimed"><p>test</p></div>
 
 <div id="active-jobs">
-  <p>Active Jobs:</p>
-
+  <ul>
+    <% current_worker.jobs.each do |job| %>
+    <% if job.pending == true %>
+    <li><%= job.title %></li>
+  </ul>
+  <% end %>
+  <% end %>
 </div>

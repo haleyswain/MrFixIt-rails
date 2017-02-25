@@ -1,4 +1,4 @@
 alert("hello");
 $("#<%= @job.id %>").html("true")
 console.log("this job is now active");
-$("#active-jobs").append("<p><%= @job.title %></p>");
+$("#active-jobs").append("<p><% current_worker.jobs.each do |job| %><%= @job.title %><% end %><p>");
