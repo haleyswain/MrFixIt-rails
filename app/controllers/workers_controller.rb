@@ -1,7 +1,9 @@
 class WorkersController < ApplicationController
   def show
     @worker = current_worker
-    @job = Job.find(params[:id])
+    @active = current_worker.jobs.where(active: true)
+    @pending = current_worker.jobs.where(pending: true)
+    @completed = current_worker.jobs.where(completed: true)
     render :show
   end
 

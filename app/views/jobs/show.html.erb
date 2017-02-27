@@ -1,13 +1,21 @@
 <h1> <%= @job.title %> </h1>
-
 <h3><%= @job.description %></h3>
-
-<% if @job.pending %>
-  <p>Someone has already claimed this job; it's currently pending.</p>
+<br>
+<div id="pending">
+<% if current_worker && @job.pending %>
+  <p>You already claimed this job; it's currently pending.</p>
+</div>
+<div id="active">
+<% elsif current_worker && @job.active %>
+<p>You claimed this job. Its currently active!</p>
+</div>
+<div id="completed">
+<% elsif @job.completed && current_worker %>
+<p> You completed this job! </p>
+</div>
 <% else %>
-<p>No one has claimed this job!</p>
-<%= link_to "click here to claim it now", job_path(@job), id: "claim_job_link", :method => "patch", remote: true %>
+<div id="claimed-job">
+  <p id="unclaimed-job">No one has claimed this job yet! Claim it now! </p>
+</div>
+<%= link_to "click here to claim it now", job_path(@job), id: "claim_job_link", :method => "post", remote: true %>
 <% end %>
-<div id="message"></div>
-
-<p>Task Active? <span id="<%= @job.id %>"><%= @job.pending %></p><%= link_to "Mark as active job", edit_job_path(@job), remote: true %></span>

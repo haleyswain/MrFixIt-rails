@@ -1,4 +1,10 @@
-
-  $("#claim_job_link").hide();
-  $("#message").text("Congrats! You just claimed this job!");
-  $("#claimed").append("<p><%= @job.title %></p>");
+<% if @job.completed? %>
+  $("#<%= @job.id %>").append('#completed');
+  $("#message").text("Congrats! This job is completed!");
+<% elsif @job.active? %>
+  $("#<%= @job.id %>").append("#active");
+  $("#message").text("This job has been marked as active");
+<% elsif @job.pending? %>
+$("#<%= @job.id %>").append("#pending");
+$("#message").text("This job has been marked as pending");
+<% end %>
