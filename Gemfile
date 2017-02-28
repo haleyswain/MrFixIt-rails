@@ -20,6 +20,7 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'simplecov', :require => false, :group => :test
+  gem 'poltergeist'
 end
 
 group :development do
