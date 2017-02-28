@@ -2,20 +2,20 @@
 <h3><%= @job.description %></h3>
 <br>
 <div id="pending">
-<% if current_worker && @job.pending %>
-  <p>You already claimed this job; it's currently pending.</p>
+<% if @job.pending && current_worker && !@job.completed && !@job.active %>
+<p>You claimed this job. Its currently pending!</p>
 </div>
 <div id="active">
-<% elsif current_worker && @job.active %>
-<p>You claimed this job. Its currently active!</p>
+<% elsif @job.active && current_worker && !@job.completed %>
+<p> This job is currently active</p>
 </div>
 <div id="completed">
 <% elsif @job.completed && current_worker %>
-<p> You completed this job! </p>
+  <p>You've claimed this job; it's completed.</p>
 </div>
 <% else %>
 <div id="claimed-job">
   <p id="unclaimed-job">No one has claimed this job yet! Claim it now! </p>
 </div>
-<%= link_to "click here to claim it now", job_path(@job), id: "claim_job_link", :method => "post", remote: true %>
+<%= link_to "click here to claim it now", job_path(@job, pending: true), id: "claim_job_link", method: "patch", remote: true %>
 <% end %>

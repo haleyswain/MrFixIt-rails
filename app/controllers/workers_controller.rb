@@ -1,11 +1,12 @@
 class WorkersController < ApplicationController
   def show
     @worker = current_worker
-    @active = current_worker.jobs.where(active: true)
-    @pending = current_worker.jobs.where(pending: true)
+    @active = current_worker.jobs.where(active: true, pending: true, completed: false)
+    @pending = current_worker.jobs.where(pending: true, active: false, completed: false)
     @completed = current_worker.jobs.where(completed: true)
     render :show
   end
+
 
   def new
     # current_worker refers to a worker account currently logged in. current_user refers to a user account currently logged in.

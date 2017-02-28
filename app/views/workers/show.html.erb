@@ -1,34 +1,32 @@
 <h1><%= current_worker.email %>'s claimed jobs:</h1>
 
-<div id="active-jobs">
+<div id="pending-jobs">
   <p>Your pending Jobs:</p>
   <% @pending.each do |job| %>
-  <% if job.completed == false && job.active == false %>
-  <div id="<%= job.id  %>">
-    <ul>
-      <li><%= job.title %></li>
+  <div id="job-<%= job.id  %>">
+      <p><%= job.title %></p>
       <%= link_to "Completed", job_path(job, completed: true), method: "patch", id: "completed_job_link", remote:true %>
-      <%= link_to "Active", job_path(job, active: true), method: "patch", class: "btn", id: "active_job_link", remote: true %>
-    </ul>
+      <%= link_to "Active", job_path(job, active: true), method: "patch", id: "active_job_link", remote: true %>
+    </div>
     <% end %>
-  <% end %>
-
 </div>
+<hr>
+<div id="active-jobs">
 <p>Your Active Jobs:</p>
 <% @active.each do |job| %>
-  <% if job.completed == false %>
-  <div id="<%= job.id %>">
-  <ul>
-    <li><%= job.title %></li>
+  <div id="job-<%= job.id %>">
+    <p><%= job.title %></p>
     <%= link_to "completed", job_path(job, completed: true), method: "patch", id: "completed_job_link", remote: true %>
-  </ul>
-  <% end %>
+  </div>
   <% end %>
 </div>
+<hr>
 
-<p>Your Completed tasks!</p>
+<div id="completed-jobs">
+<p>Your Completed tasks:</p>
 <% @completed.each do |job| %>
-<div id="<%= job.id  %>">
+<div id="job-<%= job.id  %>">
   <%= job.title %>
 </div>
 <% end %>
+</div>

@@ -1,10 +1,8 @@
-<% if @job.completed? %>
-  $("#<%= @job.id %>").append('#completed');
-  $("#message").text("Congrats! This job is completed!");
-<% elsif @job.active? %>
-  $("#<%= @job.id %>").append("#active");
-  $("#message").text("This job has been marked as active");
-<% elsif @job.pending? %>
-$("#<%= @job.id %>").append("#pending");
-$("#message").text("This job has been marked as pending");
+alert("<%= @job %>");
+<% if @job.completed %>
+  $('#job-<%= @job.id  %>').appendTo('#completed-jobs');
+<% elsif @job.active %>
+  $('#job-<%= @job.id  %>').appendTo('#active-jobs');
+<% else @job.pending %>
+  $('#job-<%= @job.id  %>').appendTo('#pending-jobs');
 <% end %>
