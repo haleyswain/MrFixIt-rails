@@ -1,0 +1,165 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/haleyswain/Desktop/MrFixIt-rails/app/models/worker.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/haleyswain/Desktop/MrFixIt-rails/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/haleyswain/Desktop/MrFixIt-rails/app/models/user.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/haleyswain/Desktop/MrFixIt-rails/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/haleyswain/Desktop/MrFixIt-rails/app/models/job.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/haleyswain/Desktop/MrFixIt-rails/app/controllers/landing_controller.rb": [
+        1,
+        1,
+        9,
+        null,
+        null
+      ],
+      "/Users/haleyswain/Desktop/MrFixIt-rails/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/haleyswain/Desktop/MrFixIt-rails/app/controllers/jobs_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/haleyswain/Desktop/MrFixIt-rails/app/controllers/workers_controller.rb": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        0,
+        1,
+        null,
+        0,
+        0,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/haleyswain/Desktop/MrFixIt-rails/app/channels/application_cable/channel.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/haleyswain/Desktop/MrFixIt-rails/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/haleyswain/Desktop/MrFixIt-rails/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/haleyswain/Desktop/MrFixIt-rails/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1488248834
+  }
+}

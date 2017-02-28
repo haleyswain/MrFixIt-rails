@@ -14,8 +14,5 @@
   <p>You've claimed this job; it's completed.</p>
 </div>
 <% else %>
-<div id="claimed-job">
-  <p id="unclaimed-job">No one has claimed this job yet! Claim it now! </p>
-</div>
 <%= link_to "click here to claim it now", job_path(@job, pending: true), id: "claim_job_link", method: "patch", remote: true %>
 <% end %>

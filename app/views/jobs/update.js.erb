@@ -1,8 +1,9 @@
-alert("<%= @job %>");
 <% if @job.completed %>
   $('#job-<%= @job.id  %>').appendTo('#completed-jobs');
 <% elsif @job.active %>
   $('#job-<%= @job.id  %>').appendTo('#active-jobs');
 <% else @job.pending %>
+  alert("You've claimed this job! Click on your worker dashboard to view its' status!")
   $('#job-<%= @job.id  %>').appendTo('#pending-jobs');
+  $('#claim_job_link').hide();
 <% end %>
